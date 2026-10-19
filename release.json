@@ -1,0 +1,24 @@
+{
+  "version": "0.3.3-rc.1",
+  "status": "candidato; revisao-6-backup-restauracao-pendente-Windows",
+  "base": "0.3.2.2-Certificado-Local-Automatico",
+  "components": {
+    "server": "0.3.3-rc.1",
+    "dashboard": "0.3.3-rc.1",
+    "relay": "0.3.3-rc.1",
+    "diagnostics": "0.2.2",
+    "agent": "0.2.2"
+  },
+  "target": "win-x64",
+  "development": {
+    "api": "http://127.0.0.1:5080",
+    "dashboard": "http://127.0.0.1:5173"
+  },
+  "deployment": {
+    "httpsPort": 5443,
+    "serverName": "definido-no-destino",
+    "credentialsIncluded": false
+  },
+  "packagingRevision": 6,
+  "serverUpdater": "0.3.2-setup1-to-0.3.3-rc.1"
+}
