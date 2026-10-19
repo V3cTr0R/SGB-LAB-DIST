@@ -8,12 +8,17 @@ Inventário e diagnóstico de estações Windows, com servidor central e Dashboa
 Este README acompanha o pacote compilado. No repositório-fonte, os guias
 operacionais desta pasta são os mesmos selecionados para a distribuição.
 
+[**Baixar a distribuição**](https://github.com/V3cTr0R/SGB-LAB-DIST/releases) ·
+[Instalar servidor](#servidor-novo) · [Instalar estação](#estação-de-laboratório)
+
 ## Recursos disponíveis
 
 - Inventário de hardware, sistema operacional, domínio e interfaces de rede.
 - Coleta de eventos e indicadores de saúde, incluindo desligamentos inesperados.
 - Heartbeat e envio autenticado de diagnósticos por HTTPS.
-- Dashboard com estado de conexão, alertas, última coleta e histórico.
+- Dashboard com indicadores e grupos/subgrupos editáveis.
+- Inventário por categoria e detalhes centralizados de hardware, sistema,
+  eventos, rede e histórico.
 - Prévia e sincronização de computadores do Active Directory por LDAPS,
   mediante configuração e permissões apropriadas.
 
@@ -31,9 +36,29 @@ uma versão diferente do produto.
 
 ## Download e requisitos
 
-Obtenha o ZIP compilado fornecido pela TI (ou por uma Release, quando disponível)
-e extraia a pasta completa
-`SGB-LAB`. Não utilize o ZIP automático de código-fonte do GitHub como instalador.
+Abra [Releases](https://github.com/V3cTr0R/SGB-LAB-DIST/releases) e baixe o anexo
+**SGB-LAB-DIST.zip**. Extraia o ZIP e entre em **`SGB-LAB-DIST\SGB-LAB`**, onde está
+`Instalar-SGB-LAB.ps1`. Use o anexo compilado; não selecione os arquivos automáticos
+“Source code” do GitHub.
+
+O pacote revisado contém Servidor, Dashboard e Relay `0.3.3-rc.1`, revisão `6`,
+e coletor `0.2.2`. A documentação da branch principal pode receber ajustes depois
+da publicação; isso não altera o ZIP anexado.
+
+Confira o download no PowerShell, na pasta onde salvou o ZIP:
+
+```powershell
+Get-FileHash -LiteralPath .\SGB-LAB-DIST.zip -Algorithm SHA256
+```
+
+SHA-256 esperado do pacote revisado:
+
+```text
+f34372efd4ebfbb3b89d422cf9d2d129659add2b691dec0d7a889dc4f68e8fe8
+```
+
+Para conferir os arquivos extraídos, use o `SHA256SUMS.txt` incluído no próprio
+ZIP. O manifesto da branch principal acompanha os arquivos dessa branch.
 
 - Windows x64 e Windows PowerShell 5.1 para os scripts.
 - Permissão de administrador para instalar serviços e configurar confiança.
